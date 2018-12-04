@@ -68,4 +68,5 @@ RUN set -ex \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
   
 ENV ASPNETCORE_ENVIRONMENT Development
+RUN ["dotnet", "restore"]
 CMD dotnet watch run --urls http://0.0.0.0:5000;https://0.0.0.0:5001
