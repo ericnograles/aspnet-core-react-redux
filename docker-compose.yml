@@ -6,11 +6,13 @@ services:
       dockerfile: docker/sql-server/Dockerfile
     expose:
       - 1433
+    ports:
+      - 1433:1433
     restart: always
   aspnet_core_react_redux:
     build:
       context: .
-      dockerfile: docker/dotnet/Dockerfile
+      dockerfile: docker/sql-server/Dockerfile
     volumes:
       - .:/app
       - /app/obj
