@@ -12,7 +12,7 @@ services:
   aspnet_core_react_redux:
     build:
       context: .
-      dockerfile: docker/sql-server/Dockerfile
+      dockerfile: docker/dotnet/Dockerfile
     volumes:
       - .:/app
       - /app/obj
