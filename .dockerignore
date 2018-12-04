@@ -1,6 +1,6 @@
 .cache
 .git
 node_modules
-bin
+bin/
 obj/
 ClientApp/node_modules/
