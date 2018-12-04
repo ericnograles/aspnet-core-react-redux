@@ -67,4 +67,5 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
   
-CMD dotnet watch run --urls http://0.0.0.0:5000,https://0.0.0.0:5001
+ENV ASPNETCORE_ENVIRONMENT Development
+CMD dotnet watch run --urls http://0.0.0.0:5000;https://0.0.0.0:5001
