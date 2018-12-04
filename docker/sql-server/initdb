@@ -9,8 +9,10 @@
 
 /opt/mssql-tools/bin/sqlcmd \
    -S localhost -U SA -P "$SA_PASSWORD" \
-   -Q "CREATE USER [$APP_DB_ACCOUNT] FROM LOGIN [$APP_DB_ACCOUNT]"
+   -d $APP_DB \
+   -Q "CREATE USER $APP_DB_ACCOUNT FROM LOGIN $APP_DB_ACCOUNT;"
 
 /opt/mssql-tools/bin/sqlcmd \
    -S localhost -U SA -P "$SA_PASSWORD" \
+   -d $APP_DB \
    -Q "exec sp_addrolemember 'db_owner', '$APP_DB_ACCOUNT'"
