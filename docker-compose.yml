@@ -1,9 +1,19 @@
 version: '3'
 services:
+  aspnet_core_react_redux-db:
+    build:
+      context: .
+      dockerfile: docker/sql-server/Dockerfile
+    expose:
+      - 1433
+    restart: always
   aspnet_core_react_redux:
-    build: .
+    build:
+      context: .
+      dockerfile: docker/dotnet/Dockerfile
     volumes:
       - .:/app
+      - /app/obj
     ports:
       - 5000:5000
       - 5001:5001
@@ -11,3 +21,5 @@ services:
       - 5000
       - 5001
     restart: always
+    depends_on:
+     - aspnet_core_react_redux-db
