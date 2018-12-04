@@ -1,0 +1,3 @@
+#!/bin/bash
+docker-compose exec aspnet_core_react_redux-db dotnet ef migrations add "$@"
+docker-compose exec aspnet_core_react_redux-db dotnet ef database update

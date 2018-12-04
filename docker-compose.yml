@@ -13,6 +13,8 @@ services:
     build:
       context: .
       dockerfile: docker/dotnet/Dockerfile
+    environment:
+      APP_DB_CONNECTION_STRING: ${APP_DB_CONNECTION_STRING}
     volumes:
       - .:/app
       - /app/obj

@@ -24,7 +24,7 @@ namespace aspnet_core_react_redux
     {
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-      var connection = @"Server=aspnet_core_react_redux-db;Database=AppDB;User=app_service;Password=app(!)STRONG_password;";
+      var connection = System.Environment.GetEnvironmentVariable("APP_DB_CONNECTION_STRING");
 
       // This line uses 'UseSqlServer' in the 'options' parameter
       // with the connection string defined above.
