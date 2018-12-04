@@ -2,5 +2,5 @@
 .git
 node_modules
 bin
-obj
-ClientApp/node_modules
+obj/
+ClientApp/node_modules/

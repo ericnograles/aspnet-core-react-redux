@@ -17,7 +17,7 @@ services:
       APP_DB_CONNECTION_STRING: ${APP_DB_CONNECTION_STRING}
     volumes:
       - .:/app
-      - /app/obj
+      - /app/obj/
     ports:
       - 5000:5000
       - 5001:5001
