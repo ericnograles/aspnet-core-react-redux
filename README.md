@@ -2,7 +2,7 @@
 
 ## Overview
 
-A sample boilerplate of .Net Core + React for exclusively non-Windows machines and with minimal prerequisites.
+A sample boilerplate of the .Net Core + React/Redux template for exclusively *nix machines with minimal prerequisites.
 
 ## Prerequisites
 
