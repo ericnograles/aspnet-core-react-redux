@@ -49,3 +49,9 @@ This is simply an executable that launches a corresponding `initdb` under the `s
 You'll notice the `gem install docker-sync` as part of the initialization.  In case you're curious, [docker-sync](http://docker-sync.io/) is a utility that allows your host's filesystem (i.e. your dev machine) perform at native speed in a Docker container.
 
 Without this utility, `dotnet watch` would execute file polling for changes, and would consume all of your container's resources. You may have seen this problem if you've tried Docker development using `webpack-dev-server`.
+
+## What About SQL Server Management Studio?
+
+Being an ex-SQL Server guy, I know how good SSMS is -- I always argue it's one of the best database GUI's I've ever seen.  However, in *nix world, we don't have the option of SSMS for convenience.  What to do?
+
+It turns out, jetBrains, the makers of the hugely popular ReSharper, WebStorm, and IntelliJ products have created a database GUI on top of IntelliJ called [DataGrip](https://www.jetbrains.com/datagrip/). Coming from an ex-SSMS addict, I can safely say this is at parity with SSMS, and is in some cases superior to it!
