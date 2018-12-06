@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using aspnet_core_react_redux.Models;
+using MyReactApp.Models;
 
 namespace aspnetcorereactredux.Migrations
 {
@@ -20,7 +20,7 @@ namespace aspnetcorereactredux.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("aspnet_core_react_redux.Models.Blog", b =>
+            modelBuilder.Entity("MyReactApp.Models.Blog", b =>
                 {
                     b.Property<int>("BlogId")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace aspnetcorereactredux.Migrations
                     b.ToTable("Blogs");
                 });
 
-            modelBuilder.Entity("aspnet_core_react_redux.Models.Post", b =>
+            modelBuilder.Entity("MyReactApp.Models.Post", b =>
                 {
                     b.Property<int>("PostId")
                         .ValueGeneratedOnAdd()
@@ -52,9 +52,9 @@ namespace aspnetcorereactredux.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("aspnet_core_react_redux.Models.Post", b =>
+            modelBuilder.Entity("MyReactApp.Models.Post", b =>
                 {
-                    b.HasOne("aspnet_core_react_redux.Models.Blog", "Blog")
+                    b.HasOne("MyReactApp.Models.Blog", "Blog")
                         .WithMany("Posts")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade);

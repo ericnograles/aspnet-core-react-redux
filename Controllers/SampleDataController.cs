@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace aspnet_core_react_redux.Controllers
+namespace MyReactApp.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller

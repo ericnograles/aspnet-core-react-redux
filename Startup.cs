@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using aspnet_core_react_redux.Models;
+using MyReactApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace aspnet_core_react_redux
+namespace MyReactApp
 {
   public class Startup
   {

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace aspnet_core_react_redux.Models
+namespace MyReactApp.Models
 {
   public class BloggingContext : DbContext
   {

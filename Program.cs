@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace aspnet_core_react_redux
+namespace MyReactApp
 {
     public class Program
     {

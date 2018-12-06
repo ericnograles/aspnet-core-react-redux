@@ -16,9 +16,7 @@ services:
     environment:
       APP_DB_CONNECTION_STRING: ${APP_DB_CONNECTION_STRING}
     volumes:
-      - local-dev:/app/:nocopy
-      - /app/obj/
-      - /bin/
+      - aspnet_core_react_redux-host:/app/:nocopy
     ports:
       - 5000:5000
       - 5001:5001
@@ -29,5 +27,5 @@ services:
     depends_on:
      - aspnet_core_react_redux-db
 volumes:
-  local-dev:
+  aspnet_core_react_redux-host:
     external: true
