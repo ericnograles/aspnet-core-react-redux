@@ -85,7 +85,7 @@ This custom Dockerfile helps scaffold SQL Server with defaults to get going.  Yo
 
 #### /docker/initdb
 
-This is simply an executable that launches a corresponding `initdb` under the `sql-server` folder. This creates the app DB, login, and user + dbo privileges via the `sqlcmd` utility
+This is simply an executable that launches a corresponding `initdb` under the `sql-server` folder. This creates the app DB, login, and user + dbo privileges via the `sqlcmd` utility. It will also execute an EF database update for the EF models.
 
 ### docker-sync
 
