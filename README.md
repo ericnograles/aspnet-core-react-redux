@@ -10,17 +10,30 @@ A sample boilerplate of the .Net Core + React/Redux template for exclusively *ni
 1. [.Net Core SDK](https://dotnet.microsoft.com/download)
 1. [Visual Studio Code](https://code.visualstudio.com/)
 
-## Getting Started
+## Instructions
+
+### Scaffolding/Development
 
 1. Clone this repo
 1. Execute this command: `echo 'APP_DB_CONNECTION_STRING=Server=aspnet_core_react_redux-db;Database=AppDB;User=app_service;Password=app(!)STRONG_password;' >> .env`
 1. Execute `gem install docker-sync` or `sudo gem install docker-sync`
-1. Execute `docker-sync-stack start`
-1. Wait for .Net Core to come up, could take several minutes at first run
+1. Execute `docker-sync-daemon start && docker-compose up -d`
+1. Execute `docker-compose logs -f` and wait for .Net Core to come up, could take several minutes at first run. Press Ctrl + C to get out of log mode and back to the terminal
 1. Execute `./docker/initdb`
 1. Browse to `http://localhost:5000`
 1. Locally, open this repo in VS Code and start developing
-1. Press Ctrl + C to bring down the scaffold when you're finished (though, you could keep it running)
+
+### Teardown
+
+`docker-compose down && docker-sync-daemon stop`
+
+### Logging
+
+`docker-compose logs && docker-sync-daemon logs`
+
+### Troubleshooting
+
+I've seen docker-sync get 😎 out of sync at times. This is generally solved by restarting Docker altogether and following the instructions from Step 4 above in `Scaffolding/Development`
 
 ## Under the Hood
 
