@@ -6,6 +6,7 @@ A sample boilerplate of the .Net Core + React/Redux template for exclusively *ni
 
 ## Prerequisites
 
+1. [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 1. [Docker](https://www.docker.com/get-started)
 1. [.Net Core SDK](https://dotnet.microsoft.com/download)
 1. [Visual Studio Code](https://code.visualstudio.com/)
