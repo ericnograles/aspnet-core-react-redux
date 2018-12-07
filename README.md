@@ -43,6 +43,12 @@ I've seen docker-sync get 😎 out of sync at times. This is generally solved by
 - This container runs `dotnet watch run` which will keep track of both the SPA (under `ClientApp` and .Net Code)
   - I'd recommend executing a `docker-compose logs -f` to keep an eye on both the .Net and SQL Server container
 
+### Dependency Management
+
+- You can open a bash into the .Net container by executing `./docker/dotnet/bash`. From there, execute any `dotnet add package` commands you need
+  - Your container should automatically restart/rebuild
+  - On your host machine, VS Code may ask to Restore Dependencies when you add/remove dependencies. Feel free to have VS Code update the dependencies on your host machine as well
+
 ### Entity Framework Migrations
 
 - There is a convenience script: `./docker/dotnet/migrate`.  To use, simply execute `./docker/dotnet/migrate MyMigrationName`.
@@ -50,7 +56,7 @@ I've seen docker-sync get 😎 out of sync at times. This is generally solved by
 
 ### Connecting to SQL Server from Host
 
-- As specified in the .env file you created when scaffolding, the Connection String is `APP_DB_CONNECTION_STRING=Data Source=aspnet_core_react_redux-db,1433;Initial Catalog=AppDB;User ID=app_service;Password=app(!)STRONG_password;`.
+- As specified in the .env file you created when scaffolding, the Connection String is `APP_DB_CONNECTION_STRING=Data Source=aspnet_core_react_redux-db,1433;Initial Catalog=AppDB;User ID=app_service;Password=app(!)STRONG_password;`
 
 ## What About SQL Server Management Studio?
 
