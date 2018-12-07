@@ -12,10 +12,10 @@ A sample boilerplate of the .Net Core + React/Redux template for exclusively *ni
 
 ## Instructions
 
-### Scaffolding/Development
+### Scaffolding
 
 1. Clone this repo
-1. Execute this command: `echo 'APP_DB_CONNECTION_STRING=Server=aspnet_core_react_redux-db;Database=AppDB;User=app_service;Password=app(!)STRONG_password;' >> .env`
+1. Execute this command: `echo 'APP_DB_CONNECTION_STRING=Data Source=aspnet_core_react_redux-db,1433;Initial Catalog=AppDB;User ID=app_service;Password=app(!)STRONG_password;' >> .env`
 1. Execute `gem install docker-sync` or `sudo gem install docker-sync`
 1. Execute `docker-sync-daemon start && docker-compose up -d`
 1. Execute `docker-compose logs -f` and wait for .Net Core to come up, could take several minutes at first run. Press Ctrl + C to get out of log mode and back to the terminal
@@ -34,6 +34,29 @@ A sample boilerplate of the .Net Core + React/Redux template for exclusively *ni
 ### Troubleshooting
 
 I've seen docker-sync get 😎 out of sync at times. This is generally solved by restarting Docker altogether and following the instructions from Step 4 above in `Scaffolding/Development`
+
+## Development Process
+
+### Coding
+
+- Any changes made to the project's directories will reflect automatically in the container
+- This container runs `dotnet watch run` which will keep track of both the SPA (under `ClientApp` and .Net Code)
+  - I'd recommend executing a `docker-compose logs -f` to keep an eye on both the .Net and SQL Server container
+
+### Entity Framework Migrations
+
+- There is a convenience script: `./docker/dotnet/migrate`.  To use, simply execute `./docker/dotnet/migrate MyMigrationName`.
+  - This will execute `dotnet ef migrations add MyMigrationName` and `dotnet ef database update` in your .Net container
+
+### Connecting to SQL Server from Host
+
+- As specified in the .env file you created when scaffolding, the Connection String is `APP_DB_CONNECTION_STRING=Data Source=aspnet_core_react_redux-db,1433;Initial Catalog=AppDB;User ID=app_service;Password=app(!)STRONG_password;`.
+
+## What About SQL Server Management Studio?
+
+Being an ex-SQL Server guy, I know how good SSMS is -- I always argue it's one of the best database GUI's I've ever seen.  However, in *nix world, we don't have the option of SSMS for convenience.  What to do?
+
+It turns out, jetBrains, the makers of the hugely popular ReSharper, WebStorm, and IntelliJ products have created a database GUI on top of IntelliJ called [DataGrip](https://www.jetbrains.com/datagrip/). Coming from an ex-SSMS addict, I can safely say this is at parity with SSMS, and is in some cases superior to it!
 
 ## Under the Hood
 
@@ -62,9 +85,3 @@ This is simply an executable that launches a corresponding `initdb` under the `s
 You'll notice the `gem install docker-sync` as part of the initialization.  In case you're curious, [docker-sync](http://docker-sync.io/) is a utility that allows your host's filesystem (i.e. your dev machine) perform at native speed in a Docker container.
 
 Without this utility, `dotnet watch` would execute file polling for changes, and would consume all of your container's resources. You may have seen this problem if you've tried Docker development using `webpack-dev-server`.
-
-## What About SQL Server Management Studio?
-
-Being an ex-SQL Server guy, I know how good SSMS is -- I always argue it's one of the best database GUI's I've ever seen.  However, in *nix world, we don't have the option of SSMS for convenience.  What to do?
-
-It turns out, jetBrains, the makers of the hugely popular ReSharper, WebStorm, and IntelliJ products have created a database GUI on top of IntelliJ called [DataGrip](https://www.jetbrains.com/datagrip/). Coming from an ex-SSMS addict, I can safely say this is at parity with SSMS, and is in some cases superior to it!

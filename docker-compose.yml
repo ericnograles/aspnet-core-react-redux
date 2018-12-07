@@ -1,9 +1,13 @@
 version: '3'
 services:
   aspnet_core_react_redux-db:
+    container_name: aspnet_core_react_redux-db
+    hostname: sql-server
     build:
       context: .
       dockerfile: docker/sql-server/Dockerfile
+    volumes:
+      - ./docker/sql-server/initdb:/usr/local/bin/initdb
     expose:
       - 1433
     ports:
