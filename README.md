@@ -18,7 +18,7 @@ A sample boilerplate of the .Net Core + React/Redux template for exclusively *ni
 1. Execute this command: `echo 'APP_DB_CONNECTION_STRING=Data Source=aspnet_core_react_redux-db,1433;Initial Catalog=AppDB;User ID=app_service;Password=app(!)STRONG_password;' >> .env`
 1. Execute `gem install docker-sync` or `sudo gem install docker-sync`
 1. Execute `docker-sync-daemon start && docker-compose up -d`
-1. Execute `docker-compose logs -f` and wait for .Net Core to come up, could take several minutes at first run. Press Ctrl + C to get out of log mode and back to the terminal
+1. In a separate terminal, execute `docker-compose logs -f` and wait for .Net Core to come up, could take a minute or two at first run.
 1. Execute `./docker/initdb`
 1. Browse to `http://localhost:5000`
 1. Locally, open this repo in VS Code and start developing
