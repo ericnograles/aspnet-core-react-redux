@@ -1,2 +1,3 @@
 #!/bin/bash
 docker-compose exec aspnet_core_react_redux-db bash initdb
+docker-compose exec aspnet_core_react_redux dotnet ef database update
